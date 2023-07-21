@@ -1,20 +1,57 @@
 .contactSection {
+  display: grid;
+  grid-template-areas: "header header header" "chat chat social" "chat chat social" "chat chat telegramBot" "footer footer footer";
+}
+@media screen and (max-width: 500px) {
+  .contactSection {
+    grid-template-areas: "header" "social" "social" "chat" "telegramBot" "footer";
+  }
+}
+.contactSection h2 {
+  grid-area: header;
+}
+.contactSection .message_area {
+  grid-area: chat;
+}
+.contactSection .message_area form {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 0.5em;
+  width: min(500px, 96%);
+  margin-inline: auto;
+}
+.contactSection .message_area form textarea {
+  resize: none;
+}
+.contactSection .message_area form div:has(input[value=submit]) {
+  text-align: center;
 }
 .contactSection .contactInfo {
+  grid-area: social;
   font-size: larger;
 }
 .contactSection .contactInfo > div {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+.contactSection .contactInfo > div > div {
   display: flex;
   -moz-column-gap: 1em;
        column-gap: 1em;
   font-size: inherit;
 }
-.contactSection .contactInfo > div i + a {
+.contactSection .contactInfo > div > div i + a {
   color: inherit;
+}
+.contactSection .chat_bot_link_container {
+  grid-area: telegramBot;
+}
+.contactSection .chat_bot_link_container .chat_bot {
+  background-color: beige;
+  padding: 0.25ch 1ch;
+  border-radius: 0.5ch;
 }
 
 .section {

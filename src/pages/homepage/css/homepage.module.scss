@@ -1,18 +1,63 @@
 .contactSection {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	display: grid;
+	grid-template-areas:
+		"header header header"
+		"chat chat social"
+		"chat chat social"
+		"chat chat telegramBot"
+		"footer footer footer";
+	@media screen and (max-width: 500px) {
+		grid-template-areas:
+			"header"
+			"social"
+			"social"
+			"chat"
+			"telegramBot" "footer";
+	}
 
+	h2 {
+		grid-area: header;
+	}
+	.message_area {
+		grid-area: chat;
+		form {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			row-gap: 0.5em;
+			width: min(500px, 96%);
+			margin-inline: auto;
+			textarea {
+				resize: none;
+			}
+			div:has(input[value="submit"]) {
+				text-align: center;
+			}
+		}
+	}
 	.contactInfo {
+		grid-area: social;
 		font-size: larger;
 		& > div {
-			display: flex;
-			column-gap: 1em;
-			font-size: inherit;
-			& i + a {
-				color: inherit;
+			width: -moz-fit-content;
+			width: fit-content;
+			margin-inline: auto;
+			& > div {
+				display: flex;
+				column-gap: 1em;
+				font-size: inherit;
+				& i + a {
+					color: inherit;
+				}
 			}
+		}
+	}
+	.chat_bot_link_container {
+		grid-area: telegramBot;
+		.chat_bot {
+			background-color: beige;
+			padding: 0.25ch 1ch;
+			border-radius: 0.5ch;
 		}
 	}
 }

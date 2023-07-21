@@ -9,7 +9,8 @@
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"deploy": "tsc && vite build && firebase deploy",
-		"fdeploy": "firebase deploy"
+		"fdeploy": "firebase deploy",
+		"gdeploy": "cd dist && git add -f . && git push origin deploy"
 	},
 	"dependencies": {
 		"firebase-tools": "^12.4.0",

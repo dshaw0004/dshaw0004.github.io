@@ -2,7 +2,7 @@
 	"hosting": {
 		"public": "dist",
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-		"site": "dshaw0004",
+		"site": "dshaw-0004",
 		"rewrites": [
 			{
 				"source": "**",

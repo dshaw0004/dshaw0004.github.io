@@ -7,7 +7,7 @@ const About = () => {
 			className={`${homestyle.section} ${homestyle.aboutSection}`}
 		>
 			<div>
-				<img src="public\ds4.jpg" alt="placeholder image" />
+				<img src="./ds4.jpg" alt="placeholder image" />
 			</div>
 			<div className={homestyle.personalInfo}>
 				<h2 className={homestyle.title}>
